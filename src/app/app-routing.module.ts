@@ -7,6 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'detail',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
         path: '',
@@ -15,11 +20,15 @@ const routes: Routes = [
       {
         path: 'detail',
         component: DetailComponent,
-        children:[
+        children: [
           { path: 'child', component: ChildComponent }
         ]
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
