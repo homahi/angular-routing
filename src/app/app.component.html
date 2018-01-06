@@ -1,4 +1,4 @@
 <h1>{{title}}</h1>
-<a routerLink="[/]">home</a>
-<a routerLink="['/','detail']">detail</a>
+<a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">home</a>
+<a [routerLink]="['/detail']" routerLinkActive="active">detail</a>
 <router-outlet></router-outlet>
