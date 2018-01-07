@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-detail',
@@ -8,9 +9,14 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  public title: string
+  constructor(private activatedRoute: ActivatedRoute, private route: Router) {
+  }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe(data => {
+      this.title = data['title'];
+    });
   }
 
   onClick() {
