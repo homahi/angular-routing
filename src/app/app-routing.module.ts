@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DetailGuard } from './detail.guard';
 import { ChildResolverService } from './child-resolver.service';
 import { AuthGuard } from './auth.guard';
 import { ChildComponent } from './child/child.component'
@@ -44,6 +45,11 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: ''
+  },
+  {
+    path: 'lazy',
+    loadChildren: './sub/sub.module#SubModule',
+    canLoad: [DetailGuard]
   }
 ];
 
