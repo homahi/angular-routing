@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
+
+  onClick() {
+    let extras: NavigationExtras = {
+      queryParams: {
+        name: 'taro'
+      }
+    }
+    this.route.navigate(['/detail', 1], extras);
+  };
 
 }
