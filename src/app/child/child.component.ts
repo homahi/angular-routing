@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ChildComponent implements OnInit {
   public params: any = {};
   public id: string;
+  public fragment: string;
 
 
   constructor(
@@ -21,6 +22,9 @@ export class ChildComponent implements OnInit {
     });
     this.route.queryParams.subscribe(res => {
       this.params = res;
+    });
+    this.route.fragment.subscribe(fragment => {
+      this.fragment = fragment;
     });
   }
 
