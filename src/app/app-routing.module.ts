@@ -3,7 +3,7 @@ import { ChildComponent } from './child/child.component'
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { Routes, RouterModule } from '@angular/router';
-import {MultiComponent} from './multi/multi.component';
+import { MultiComponent } from './multi/multi.component';
 
 const routes: Routes = [
   {
@@ -29,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'multi',
-    component: MultiComponent
+    component: MultiComponent,
+    outlet: 'subOutlet'
   },
   {
     path: '**',
