@@ -1,6 +1,8 @@
 <h1>{{title}}</h1>
 <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">home</a>
 <a routerLink="detail" routerLinkActive="active">detail</a>
-<a routerLink="detail/1" routerLinkActive="active">detail1</a>
-<a routerLink="detail/2" routerLinkActive="active">detail2</a>
+<a routerLink="detail/1?name=taro" routerLinkActive="active">detail1</a>
+<a routerLink="detail/2?name=jiro" routerLinkActive="active">detail2</a>
+<a [routerLink]="[{outlets:{subOutlet:['multi']}}]">Show Multi</a>
 <router-outlet></router-outlet>
+<router-outlet name="subOutlet"></router-outlet>

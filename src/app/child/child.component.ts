@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-  public snapshotId: string;
+  public params: any = {};
   public id: string;
 
 
@@ -19,7 +19,9 @@ export class ChildComponent implements OnInit {
     this.route.params.subscribe(res => {
       this.id = res['id'];
     });
-    this.snapshotId= this.route.snapshot.params['id'];
+    this.route.queryParams.subscribe(res => {
+      this.params = res;
+    });
   }
 
 }
