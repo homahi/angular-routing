@@ -23,8 +23,12 @@ export class ChildComponent implements OnInit {
     this.route.queryParams.subscribe(res => {
       this.params = res;
     });
-    this.route.fragment.subscribe(fragment => {
-      this.fragment = fragment;
+    this.route.fragment.subscribe(res => {
+      this.fragment = res;
+      const target = document.getElementById(res);
+      if (target) {
+        target.scrollIntoView();
+      }
     });
   }
 
