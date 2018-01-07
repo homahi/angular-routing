@@ -3,6 +3,7 @@ import { ChildComponent } from './child/child.component'
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { Routes, RouterModule } from '@angular/router';
+import {MultiComponent} from './multi/multi.component';
 
 const routes: Routes = [
   {
@@ -21,10 +22,14 @@ const routes: Routes = [
         path: 'detail',
         component: DetailComponent,
         children: [
-          { path: 'child', component: ChildComponent }
+          { path: ':id', component: ChildComponent }
         ]
       }
     ]
+  },
+  {
+    path: 'multi',
+    component: MultiComponent
   },
   {
     path: '**',

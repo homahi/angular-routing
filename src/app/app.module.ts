@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { ChildComponent } from './child/child.component';
+import { MultiComponent } from './multi/multi.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ChildComponent } from './child/child.component';
     AppComponent,
     HomeComponent,
     DetailComponent,
-    ChildComponent
+    ChildComponent,
+    MultiComponent
   ],
   imports: [
     BrowserModule,
