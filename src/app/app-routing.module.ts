@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ChildResolverService } from './child-resolver.service';
 import { AuthGuard } from './auth.guard';
 import { ChildComponent } from './child/child.component'
 import { HomeComponent } from './home/home.component';
@@ -26,7 +27,11 @@ const routes: Routes = [
           title: '詳細ページ'
         },
         children: [
-          { path: ':id', component: ChildComponent }
+          {
+            path: ':id', component: ChildComponent, resolve: {
+              message: ChildResolverService
+            }
+          }
         ]
       }
     ]

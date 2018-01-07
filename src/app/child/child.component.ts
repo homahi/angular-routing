@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+  public message:string;
   public params: any = {};
   public id: string;
   public fragment: string;
@@ -17,6 +18,9 @@ export class ChildComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.message = data['message'];
+    });
     this.route.params.subscribe(res => {
       this.id = res['id'];
     });

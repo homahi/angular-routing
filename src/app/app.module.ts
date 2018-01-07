@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {ChildResolverService} from './child-resolver.service';
 import {AuthGuard} from './auth.guard';
 import { NgModule } from '@angular/core';
 
@@ -23,7 +24,7 @@ import { MultiComponent } from './multi/multi.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,ChildResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
